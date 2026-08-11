@@ -15,7 +15,7 @@
 
 ### Phase 2 -- IP Addressing
 -[X] Configure router interface
--[X] Configure deoartment Switches
+-[X] Configure department Switches
 -[] Configure Sales PCs
 -[] Configure Engineering PCs
 -[] Configure Guest PCs 
@@ -151,6 +151,24 @@ Then save your configuration!
 
     end   
     copy running-config startup-config
+
+13. Configure the PCs
+Select each PC, click the desktop icon, then the IP Configuration icon. Change the type from DHCP to static.
+
+Sales PC
+IP Address       192.168.10.132
+Subnet Mask      255.255.255.192
+Default Gateway  192.168.10.129
+ 
+Engineering PC   
+IP Address       192.168.10.196
+Subnet Mask      255.255.255.224
+Default Gateway  192.168.10.193
+
+Guest PC
+IP Address     192.168.10.4
+Subnet Mask    255.255.255.128
+Default Mask   192.168.10.1
 
 
 
