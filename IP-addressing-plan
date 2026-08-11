@@ -1,4 +1,12 @@
 #VLSM addressing plan
+## Design Rationale
+
+VLSM was used because each department has a different number of required hosts.
+The largest network was allocated first to prevent adress fragmentation.
+Guest users were assigned a /25 because the department requires approximately 100 hosts and a /25 provides 126 usable addresses.
+Sales was assigned a /26, providing 62 usable addresses.
+Engineering was assigned a /27, providing 30 usable addresses.
+The remaining address space was intentionally left unallocated to allow for future expansion.
 
 Guest --> 100 hosts
 Sales --> 50 hosts
