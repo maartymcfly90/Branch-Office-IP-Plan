@@ -16,18 +16,18 @@
 ### Phase 2 -- IP Addressing
 -[X] Configure router interface
 -[X] Configure department Switches
--[] Configure Sales PCs
--[] Configure Engineering PCs
--[] Configure Guest PCs 
+-[X] Configure Sales PCs
+-[X] Configure Engineering PCs
+-[X] Configure Guest PCs 
 
 
 ### Phase 3 -- Verification
--[] Verify router interface status
--[] Verify Sales connectivity
--[] Verify Engineering connectivity
--[] Verify Guest connectivity
--[] Verify subnet boundaries
--[] Verify no overlapping networks
+-[X] Verify router interface status
+-[X] Verify Sales connectivity
+-[X] Verify Engineering connectivity
+-[X] Verify Guest connectivity
+-[X] Verify subnet boundaries
+-[X] Verify no overlapping networks
 
 ### Phase 4 -- Documentation 
 -[] Complete addressing table
@@ -170,8 +170,40 @@ IP Address     192.168.10.4
 Subnet Mask    255.255.255.128
 Default Mask   192.168.10.1
 
+14. Verify the network connectivity in layers. 
+ Test #1- PC --> Its gateway
+    From Sales:
+        ping 192.168.10.129
+    Engineering:
+        ping 192.168.10.193
+    Guest   
+        ping 192.168.10.1
+If successful there should be a colored envelope and a green check mark!
 
+ Test #2- PC --> Another department
+    From Sales:
+        ping 192.168.10.196
 
+The hop diagram should be: Sales PC -> Sales Gateway -> Router -> Engineering Gateway -> Engineering PC
+
+    Then: ping 192.168.10.4
+This is testing Sales --> Guest
+
+15. Verify the Switch
+On each switch, type:
+    show ip interface brief
+You should see the VLAN interface with its management IP.
+
+Then type:
+    show running-config
+This will give evidence of your configuration
+
+16. Verify the Router
+Type:
+    show ip interface brief
+and:
+    show ip route
+The routing table should show your three directly connected networks. 
 
 
 
