@@ -1,4 +1,3 @@
-#VLSM addressing plan
 ## Design Rationale
 
 VLSM was used because each department has a different number of required hosts.
@@ -31,10 +30,12 @@ For each requirement, I must allocate from largest to smallest and finding the s
 Guest has 100 hosts so we'll use the equation to find usable hosts.
 Usable hosts = 2^(host bits) - 2.
 
+## VLSM Design
 - Guests = (2^7)-2 = 126 usable hosts
 - Sales =  (2^6)-2 = 62 usable hosts
 - Engineering = (2^5)-2 = 30 usable hosts
 
+## Addressing Table
 Department  | Network           | Mask             | Broadcast      | Gateway       | Host Range|
 Guest       | 192.168.10.0/25   | 255.255.255.128  | 192.168.10.127 | 192.168.10.1  |.1   -.126 |
 Sales       | 192.168.10.128/26 | 255.255.255.192  | 192.168.10.191 | 192.168.10.129|.129 -.190 |
