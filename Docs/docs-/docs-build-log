@@ -6,19 +6,20 @@
 
 - [X] Created Packet Tracer project 
 - [X] Added branch router
-- [] Added Sales switch
-- [] Added Engineering switch
-- [] Added Guest switch
-- [] Added representative PCs
-- [] Connected router to switches
-- [] Connected PCs to department switches
+- [X] Added Sales switch
+- [X] Added Engineering switch
+- [X] Added Guest switch
+- [X] Added representative PCs
+- [X] Connected router to switches
+- [X] Connected PCs to department switches
 
 ### Phase 2 -- IP Addressing
--[] Configure router interface
+-[X] Configure router interface
+-[X] Configure deoartment Switches
 -[] Configure Sales PCs
 -[] Configure Engineering PCs
 -[] Configure Guest PCs 
--[] Configure default gateways
+
 
 ### Phase 3 -- Verification
 -[] Verify router interface status
@@ -99,4 +100,63 @@ GigabitEthernet0/2  192.168.10.193  up        up
   copy running-config startup-config
 (when prompted for the destination filename, press ENTER twice)
 
-10. 
+10. Configure SW-Guest
+Click on SW-Guest then select CLI.
+Press the enter key:
+    enable
+    config t
+    hostname SW-Guest
+
+Now give the switch a management IP:
+    interface vlan 1
+    ip address 192.168.10.3 255.255.255.128
+    no shutdown
+    exit
+
+Set the default gateway:
+    ip default-gateway 192.168.10.1
+
+Then save your configuration!
+    end
+    copy running-config startup-config
+
+11. Configure SW-Sales
+
+    enable
+    config t
+    hostname SW-Sales
+
+    interface vlan 1
+    ip address 192.168.10.131 255.255.255.192
+    no shutdown
+    exit
+
+    ip default-gateway 192.168.10.129
+
+    end
+    copy running-config startup-config
+
+12. Configure SW-Engineering
+
+    enable   
+    configure terminal
+    hostname SW-Engineering
+
+    interface vlan 1
+    ip address 192.168.10.195 255.255.255.224
+    no shutdown
+    exit
+
+    ip default-gateway 192.168.10.193
+
+    end   
+    copy running-config startup-config
+
+
+
+
+
+
+
+
+
