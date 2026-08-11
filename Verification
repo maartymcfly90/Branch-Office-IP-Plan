@@ -1,1 +1,21 @@
-##
+## Verification
+Connectivity was verified using ICMP ping tests.
+
+### Sales
+Sales PC successfully reached its default gateway.
+
+### Engineering
+Engineering PC successfully reached its default
+
+### Guest
+Guest PC successfully reached its default gateway
+
+### Subnet Validation
+Each department was verified to be within its assigned subnet and no subnets overlap.
+
+### Address Capacity
+| Department  | Required | Available | Remaining |
+| ----------  | -------- | --------- | --------- |
+| Guest       | 100      | 126       | 26        |
+| Sales       | 50       | 62        | 12        | 
+| Engineering | 25       | 30        | 5         |
