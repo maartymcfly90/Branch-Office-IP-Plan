@@ -4,6 +4,7 @@
 A company is opening a new branch office requiring separate networks for Sales, Engineering, and Guest users.
 Each department has different host requirements :
 
+## Business Requirements
 | Department  | Required Hosts |
 | ----------  | -------------- |
 | Sales       | 50             |
