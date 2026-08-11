@@ -4,8 +4,8 @@
 
 ### Phase 1 -- Initial Topology
 
-- [] Created Packet Tracer project 
-- [] Added branch router
+- [X] Created Packet Tracer project 
+- [X] Added branch router
 - [] Added Sales switch
 - [] Added Engineering switch
 - [] Added Guest switch
@@ -35,3 +35,68 @@
 -[] Complete README
 
 Everytime i complete and finish a section change [] to [X]
+
+1. From network devices select a router, I chose router 2911 and renamed it Branch-R1.
+2. From network devices, add three switches and connect all three switches to the router by using a copper straight through cable. 
+    You can rename the switches if you prefer as well. Each switch was renamed to each department.
+3.From end devices, select PCs and add PCs to the layout then connect them to the switches. I chose to have two PCs connected to each switch.
+
+Sales: PC1,PC2
+Engineering: PC3,PC4
+Guest: PC5,PC6
+
+## Configuring the router
+
+1. Click Branch-R1: select CLI and press enter
+(The router will become the default gateway for each subnet!)
+2. Enter privilege mode: 
+      type enable
+
+3. Then enter global configuration mode: 
+      type configure terminal or config t
+
+4. Give the router a hostname if you like
+      type hostname Branch-R1
+(The prompt will change to now Branch-R1(config)#:
+
+5. Configure the Guest interface
+  interface gigabitEthernet 0/0               <- selecting the interface
+  ip address 192.168.10.1 255.255.255.128     <-  giving it the Guest gateway address
+  no shutdown                                 <- turning the interface on
+  exit
+                                              (the router interface is gigabitEthernet 0/0)
+Guest now has: Gateway 192.168.10.1
+               Mask: 255.255.255.128
+
+6. Configure the Sales interface
+ interface gigabitEthernet 0/1
+ ip address 192.168.10.129 255.255.255.192
+ no shutdown
+ exit
+
+Sales now has: Gateway 192.168.10.129
+               Mask: 255.255.255.192
+
+7. Configure the Engineering interface
+interface gigabitEthernet 0/2
+ip address 192.168.19.193 255.255.255.224
+no shutdown
+exit
+
+Engineering now has: Gateway 192.168.10.193
+                     Mask: 255.255.255.224
+
+8. Verify the router 
+You can run: show ip interface brief
+You would see something similar to:
+
+Interface           IP-Address      Status  Protocol
+GigabetEthernet0/0  192.168.10.1    up        up
+GigabitEthernet0/1  192.168.10.129  up        up
+GigabitEthernet0/2  192.168.10.193  up        up
+
+9. Save the configuration:
+  copy running-config startup-config
+(when prompted for the destination filename, press ENTER twice)
+
+10. 
