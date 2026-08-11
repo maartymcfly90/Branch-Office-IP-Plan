@@ -1,0 +1,37 @@
+# Branch Office IP Plan - Build Log
+
+## Packet Tracer Implementation
+
+### Phase 1 -- Initial Topology
+
+- [] Created Packet Tracer project 
+- [] Added branch router
+- [] Added Sales switch
+- [] Added Engineering switch
+- [] Added Guest switch
+- [] Added representative PCs
+- [] Connected router to switches
+- [] Connected PCs to department switches
+
+### Phase 2 -- IP Addressing
+-[] Configure router interface
+-[] Configure Sales PCs
+-[] Configure Engineering PCs
+-[] Configure Guest PCs 
+-[] Configure default gateways
+
+### Phase 3 -- Verification
+-[] Verify router interface status
+-[] Verify Sales connectivity
+-[] Verify Engineering connectivity
+-[] Verify Guest connectivity
+-[] Verify subnet boundaries
+-[] Verify no overlapping networks
+
+### Phase 4 -- Documentation 
+-[] Complete addressing table
+-[] Add topology screenshot
+-[] Add verification screenshots
+-[] Complete README
+
+Everytime i complete and finish a section change [] to [X]
