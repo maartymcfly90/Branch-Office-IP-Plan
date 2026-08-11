@@ -1,1 +1,10 @@
 
+                              Router
+                             /      \
+                            /        \
+                     +------------+------------+
+                     |            |            |
+                 Sales       Engineering     Guest
+                  SW1            SW2           SW3
+                 / | \          / | \         / | \
+                  PCs            PCs           PCs 
