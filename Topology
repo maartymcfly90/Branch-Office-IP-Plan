@@ -6,5 +6,5 @@
                      |            |            |
                  Sales       Engineering     Guest
                   SW1            SW2           SW3
-                 / | \          / | \         / | \
-                  PCs            PCs           PCs 
+                 /   \          /   \         /  \
+               PC1  PC2        PC3  PC4      PC5  PC6
